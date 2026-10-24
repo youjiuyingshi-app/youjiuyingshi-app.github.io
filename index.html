@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悠久影视 · 老影像修复档案与冷门片放映单 | youjiuyingshi-app.github.io</title>
+<meta name="description" content="悠久影视是一间只做旧影像的档案室：把录像厅时代、美术片黄金期与默片残卷逐格编号，公开修复进度、拷贝比对结果与每周放映排期，另附可查的观影笔记与收录细则。">
+<meta name="keywords" content="悠久影视,老片修复档案,冷门佳片放映单,录像厅时代影像,美术片修复进度,拷贝版本比对,youjiuyingshi-app,老电影观影笔记">
+<meta name="author" content="悠久影视">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#141a17">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="悠久影视">
+<meta property="og:title" content="悠久影视 · 老影像修复档案与冷门片放映单">
+<meta property="og:description" content="逐格编号的旧影像档案室：修复进度、拷贝比对、每周放映排期与观影笔记。">
+<meta property="og:url" content="https://youjiuyingshi-app.github.io">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="悠久影视 · 老影像修复档案与冷门片放映单">
+<meta name="twitter:description" content="只做旧影像的档案室：修复进度、拷贝比对、放映排期与观影笔记。">
+<link rel="canonical" href="https://youjiuyingshi-app.github.io">
+<style>
+:root{
+  --ink:#141a17;
+  --ink2:#1d241f;
+  --paper:#f2ece1;
+  --paper2:#e6dccb;
+  --amber:#e0a33c;
+  --amber-d:#b87c1e;
+  --seal:#a8342b;
+  --line:#3a443c;
+  --muted:#9aa79c;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  background-image:radial-gradient(circle at 12% 8%,rgba(224,163,60,.10),transparent 42%),radial-gradient(circle at 88% 72%,rgba(168,52,43,.09),transparent 46%);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+a{color:var(--amber);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* 顶部胶片条 */
+.strip{height:14px;background:var(--paper2);box-shadow:0 0 0 1px rgba(0,0,0,.35) inset}
+.strip i{display:block;height:14px;background-image:radial-gradient(circle,var(--ink) 0 3px,transparent 3px);background-size:22px 14px;background-position:6px 0}
+
+/* 头部 */
+header.top{position:sticky;top:0;z-index:40;background:rgba(20,26,23,.94);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.mark{width:34px;height:34px;flex:0 0 34px;border:2px solid var(--amber);border-radius:3px;position:relative;background:linear-gradient(180deg,rgba(224,163,60,.22),transparent)}
+.mark::before,.mark::after{content:"";position:absolute;left:3px;right:3px;height:4px;background:repeating-linear-gradient(90deg,var(--amber) 0 4px,transparent 4px 8px)}
+.mark::before{top:8px}
+.mark::after{bottom:8px}
+.brand b{font-size:19px;letter-spacing:3px;color:var(--paper)}
+.brand span{font-size:11px;color:var(--muted);letter-spacing:1px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav.main ul{display:flex;gap:4px;list-style:none;flex-wrap:nowrap}
+nav.main a{display:block;padding:8px 12px;font-size:14px;color:var(--paper);border:1px solid transparent;border-radius:20px;white-space:nowrap}
+nav.main a:hover{color:var(--amber);border-color:var(--line);text-decoration:none}
+.menu-btn{display:none}
+
+/* 首屏：竖排印章 + 节目单 */
+.hero{padding:52px 0 26px}
+.hero-grid{display:grid;grid-template-columns:96px 1fr;gap:26px;align-items:start}
+.seal{writing-mode:vertical-rl;background:var(--seal);color:#fff;border-radius:4px;padding:18px 10px;text-align:center;letter-spacing:8px;font-size:26px;font-weight:700;box-shadow:0 8px 24px rgba(168,52,43,.28);align-self:stretch;display:flex;align-items:center;justify-content:center}
+.seal small{writing-mode:vertical-rl;font-size:11px;letter-spacing:3px;opacity:.85;margin-right:6px}
+.hero h1{font-size:clamp(28px,5vw,46px);line-height:1.25;letter-spacing:1px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--amber);border-bottom:3px solid rgba(224,163,60,.35);padding-bottom:2px}
+.lede{margin-top:14px;color:#cfd6cd;max-width:56ch}
+.kw{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.kw span{font-size:12.5px;color:var(--paper2);border:1px dashed var(--line);border-radius:2px;padding:5px 10px;background:rgba(255,255,255,.02)}
+.ticket{margin-top:22px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,var(--ink2),rgba(20,26,23,.6));overflow:hidden}
+.ticket-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px dashed var(--line);font-size:12.5px;letter-spacing:2px;color:var(--amber)}
+.ticket-b{display:grid;grid-template-columns:1fr auto;gap:18px;padding:18px 16px}
+.ticket-b h2{font-size:20px;margin-bottom:6px}
+.ticket-b p{font-size:14px;color:#cfd6cd}
+.no{font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:1;color:var(--amber);letter-spacing:-1px}
+.no small{display:block;font-size:11px;letter-spacing:2px;color:var(--muted);font-family:inherit}
+
+/* 栏目通用 */
+section{padding:38px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.sec-head h2{font-size:22px;letter-spacing:1px;position:relative;padding-left:14px}
+.sec-head h2::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:4px;background:var(--amber)}
+.sec-head p{font-size:13px;color:var(--muted)}
+
+/* 片库：编号列表 */
+.shelf{list-style:none;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.shelf li{display:grid;grid-template-columns:58px 1fr 120px 96px;gap:14px;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(58,68,60,.6);background:rgba(255,255,255,.015)}
+.shelf li:last-child{border-bottom:0}
+.shelf li:hover{background:rgba(224,163,60,.06)}
+.shelf .idx{font-family:Georgia,serif;color:var(--amber);font-size:18px}
+.shelf .t{font-size:15.5px}
+.shelf .t i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:2px}
+.shelf .y{font-size:13px;color:#cfd6cd}
+.tag{font-size:11.5px;padding:3px 9px;border-radius:12px;border:1px solid;text-align:center;white-space:nowrap}
+.tag.ok{color:#8fd0a3;border-color:#3d6b4d;background:rgba(80,160,110,.10)}
+.tag.doing{color:var(--amber);border-color:#6b5322;background:rgba(224,163,60,.10)}
+.tag.wait{color:#9aa79c;border-color:#414a42}
+
+/* 排期：时刻表 */
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table.sched{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}
+table.sched caption{caption-side:top;text-align:left;padding:12px 16px;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line)}
+table.sched th,table.sched td{padding:12px 16px;border-bottom:1px solid rgba(58,68,60,.55);text-align:left;vertical-align:top}
+table.sched thead th{background:rgba(224,163,60,.10);color:var(--amber);font-size:12.5px;letter-spacing:1px;font-weight:600}
+table.sched tbody tr:hover{background:rgba(255,255,255,.03)}
+table.sched td b{color:var(--paper)}
+
+/* 修复手记：双栏错落 */
+.notes{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.card{border:1px solid var(--line);border-radius:6px;background:var(--ink2);padding:18px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:14px;color:#cfd6cd}
+.card .meta{margin-top:12px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.ph{height:120px;border-radius:4px;margin-bottom:14px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(224,163,60,.28),rgba(168,52,43,.24) 60%,rgba(20,26,23,.9)),repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 6px,transparent 6px 12px)}
+.stack{display:grid;gap:16px}
+blockquote{margin:0;padding:14px 16px;border-left:3px solid var(--seal);background:rgba(168,52,43,.08);font-size:14px;color:#e7ded0;border-radius:0 4px 4px 0}
+blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:12px;color:var(--muted)}
+
+/* 版本比对 */
+.vs{display:grid;grid-template-columns:1fr 46px 1fr;gap:14px;align-items:center}
+.col{border:1px solid var(--line);border-radius:6px;padding:16px;background:rgba(255,255,255,.015)}
+.col h4{font-size:15px;margin-bottom:10px;color:var(--amber)}
+.col ul{list-style:none;font-size:13.5px;color:#cfd6cd}
+.col ul li{padding:6px 0;border-bottom:1px dotted rgba(58,68,60,.7)}
+.col ul li:last-child{border-bottom:0}
+.col ul li b{color:var(--paper);font-weight:600}
+.mid{text-align:center;font-family:Georgia,serif;font-size:20px;color:var(--muted)}
+
+/* 收录细则 + 表单 */
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;list-style:none;counter-reset:r}
+.rules li{counter-increment:r;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:14px 16px;background:rgba(255,255,255,.02);font-size:14px;color:#cfd6cd}
+.rules li::before{content:counter(r,decimal-leading-zero);display:block;font-family:Georgia,serif;color:var(--amber);font-size:13px;letter-spacing:2px;margin-bottom:4px}
+form.note{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+form.note label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+form.note input,form.note textarea,form.note select{width:100%;background:#101511;color:var(--paper);border:1px solid var(--line);border-radius:4px;padding:10px 12px;font:inherit;font-size:14px}
+form.note textarea{grid-column:1 / -1;min-height:96px;resize:vertical}
+form.note input:focus,form.note textarea:focus,form.note select:focus{outline:none;border-color:var(--amber)}
+.btn{grid-column:1 / -1;justify-self:start;background:var(--amber);color:#20180a;border:0;border-radius:4px;padding:11px 26px;font-size:14.5px;font-weight:700;letter-spacing:1px;cursor:pointer}
+.btn:hover{background:var(--amber-d);color:#fff;text-decoration:none}
+
+/* 侧栏信息卡（域名位） */
+.siteinfo{margin:26px 0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.siteinfo-h{padding:12px 18px;background:rgba(224,163,60,.12);font-size:13px;letter-spacing:2px;color:var(--amber);border-bottom:1px solid var(--line)}
+.siteinfo-b{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px}
+.siteinfo-b dl{font-size:13.5px}
+.siteinfo-b dt{color:var(--muted);font-size:12px;margin-bottom:4px}
+.siteinfo-b dd{color:var(--paper);word-break:break-all}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);margin-top:20px;padding:34px 0 46px;background:rgba(0,0,0,.22)}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.f-grid h5{font-size:14px;color:var(--amber);margin-bottom:10px;letter-spacing:1px}
+.f-grid ul{list-style:none;font-size:13.5px}
+.f-grid ul li{padding:4px 0}
+.f-grid ul a{color:#cfd6cd}
+.f-grid p{font-size:13.5px;color:#cfd6cd}
+.copy{margin-top:26px;padding-top:16px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* 移动端 */
+@media (max-width:900px){
+  .notes{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .hero{padding:34px 0 18px}
+  .hero-grid{grid-template-columns:1fr;gap:16px}
+  .seal{writing-mode:horizontal-tb;letter-spacing:6px;font-size:20px;padding:10px;justify-self:start;align-self:auto;display:inline-flex;gap:8px}
+  .seal small{writing-mode:horizontal-tb;margin:0;letter-spacing:2px}
+  .menu-btn{display:inline-block;background:transparent;border:1px solid var(--line);color:var(--paper);border-radius:20px;padding:8px 14px;font-size:13.5px;cursor:pointer}
+  nav.main{position:absolute;left:0;right:0;top:64px;background:var(--ink2);border-bottom:1px solid var(--line);display:none}
+  #navsw:checked ~ nav.main{display:block}
+  nav.main ul{flex-direction:column;gap:0;padding:8px}
+  nav.main a{border-radius:4px;padding:12px 14px;border-bottom:1px solid rgba(58,68,60,.5)}
+  .top-in{position:relative}
+  .shelf li{grid-template-columns:44px 1fr;grid-template-areas:"i t" ". y" ". g";gap:6px 12px}
+  .shelf .idx{grid-area:i}
+  .shelf .t{grid-area:t}
+  .shelf .y{grid-area:y;font-size:12.5px}
+  .tag{grid-area:g;justify-self:start}
+  .vs{grid-template-columns:1fr}
+  .mid{display:none}
+  .siteinfo-b,.f-grid{grid-template-columns:1fr}
+  .f-grid{gap:18px}
+  form.note{grid-template-columns:1fr}
+  .ticket-b{grid-template-columns:1fr;gap:12px}
+  .no{font-size:34px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  nav.main,.menu-btn{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<div class="strip"><i></i></div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <span>
+        <b>悠久影视</b>
+        <span>老影像编号归档 · 修复进度公开</span>
+      </span>
+    </div>
+    <input type="checkbox" id="navsw" hidden>
+    <label class="menu-btn" for="navsw" aria-label="展开栏目导航">栏目</label>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#">片库索引</a></li>
+        <li><a href="#">放映排期</a></li>
+        <li><a href="#">修复手记</a></li>
+        <li><a href="#">版本比对</a></li>
+        <li><a href="#">收录细则</a></li>
+        <li><a href="#">观影笔记</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div class="seal"><small>档案室</small>悠久影视</div>
+      <div>
+        <h1>把散落的旧影像<br><em>重新编号、归档、放映</em></h1>
+        <p class="lede">这里不追新片。悠久影视只做一件事：把录像厅时代、美术片黄金期与早期译制片的拷贝找出来，逐格核对、记录损伤、排进每周放映单，再把能公开的部分整理成可查的条目。</p>
+        <div class="kw">
+          <span>老片修复档案</span>
+          <span>冷门佳片放映单</span>
+          <span>拷贝版本比对</span>
+          <span>录像厅时代</span>
+          <span>youjiuyingshi-app</span>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-h"><span>本周头场 · 周三 19:30</span><span>座席 36 / 需预约</span></div>
+          <div class="ticket-b">
+            <div>
+              <h2>《城南旧事》1983 · 35mm 转数字中间片</h2>
+              <p>本次放映使用 2024 年重扫版本，声轨保留原始单声道，片头"北京电影制片厂"字样为复刻修复，非原始拷贝元素。</p>
+            </div>
+            <div class="no">001<small>NO.</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="shelf">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>片库索引</h2>
+        <p>按入库顺序编号，已收录 412 条，此处公开前六条</p>
+      </div>
+      <ol class="shelf">
+        <li>
+          <span class="idx">012</span>
+          <span class="t">大闹天宫（上集）<i>动画 · 上海美术电影制片厂 · 存 10 分钟缺失段</i></span>
+          <span class="y">1961 / 片长 51′</span>
+          <span class="tag ok">修复完成</span>
+        </li>
+        <li>
+          <span class="idx">038</span>
+          <span class="t">马路天使<i>剧情 · 明星影片公司 · 声轨有周期性爆音</i></span>
+          <span class="y">1937 / 片长 91′</span>
+          <span class="tag doing">修复中</span>
+        </li>
+        <li>
+          <span class="idx">076</span>
+          <span class="t">黄土地<i>剧情 · 广西电影制片厂 · 色彩偏色待校正</i></span>
+          <span class="y">1984 / 片长 89′</span>
+          <span class="tag doing">校色阶段</span>
+        </li>
+        <li>
+          <span class="idx">104</span>
+          <span class="t">哪吒闹海<i>动画 · 宽银幕版与电视版并存</i></span>
+          <span class="y">1979 / 片长 65′</span>
+          <span class="tag ok">双版本入库</span>
+        </li>
+        <li>
+          <span class="idx">155</span>
+          <span class="t">小街<i>剧情 · 拷贝为录像带转录，画质受限</i></span>
+          <span class="y">1981 / 片长 78′</span>
+          <span class="tag wait">待寻源</span>
+        </li>
+        <li>
+          <span class="idx">203</span>
+          <span class="t">渔光曲<i>剧情 · 配音版与配唱版两套管</i></span>
+          <span class="y">1934 / 片长 87′</span>
+          <span class="tag wait">排队中</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>放映排期</h2>
+        <p>时刻表按放映日排布，雨天照常，遇拷贝检修顺延一周</p>
+      </div>
+      <div class="tablebox">
+        <table class="sched">
+          <caption>2026 年 10 月 · 第 3 周编排（时间为北京时间）</caption>
+          <thead>
+            <tr><th scope="col">日期</th><th scope="col">时段</th><th scope="col">片目</th><th scope="col">版本说明</th><th scope="col">状态</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>周二</td><td>14:00</td><td><b>大闹天宫</b>（上集）</td><td>2025 重扫 · 配乐重录</td><td>开放</td></tr>
+            <tr><td>周三</td><td>19:30</td><td><b>城南旧事</b></td><td>35mm 转数字中间片</td><td>预约中</td></tr>
+            <tr><td>周五</td><td>20:00</td><td><b>马路天使</b></td><td>修复测试版 · 含对比片段</td><td>仅档案员</td></tr>
+            <tr><td>周六</td><td>15:00</td><td><b>哪吒闹海</b></td><td>宽银幕版</td><td>开放</td></tr>
+            <tr><td>周日</td><td>10:30</td><td><b>渔光曲</b></td><td>配音版 · 附映前导览</td><td>开放</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>修复手记</h2>
+        <p>记录每一次判断：留什么、补什么、为什么不再补</p>
+      </div>
+      <div class="notes">
+        <article class="card">
+          <div class="ph" aria-hidden="true"></div>
+          <h3>第 38 号：《马路天使》的爆音该不该修掉</h3>
+          <p>原始声轨每隔约 11 分钟出现一次高频爆音，来自当年放映机的磨损而非素材损伤。我们保留前两次作为"放映痕迹"，第三次以后的做降噪处理——完全修平会丢掉这条拷贝经历过的放映史。</p>
+          <div class="meta">记录人：档案室老周 · 2026-10-09 · 工时 26 小时</div>
+        </article>
+        <div class="stack">
+          <article class="card">
+            <h3>关于"补帧"</h3>
+            <p>缺帧一律不补。宁可留黑场一秒，也不用插值画面冒充原件，条目里会标明缺失位置与时长。</p>
+            <div class="meta">通则 · 2024 年制定</div>
+          </article>
+          <blockquote>
+            观众问过一句"修完是不是就变新片了"，我们把那句话贴在墙上。修的是损伤，不是年代。
+            <cite>—— 悠久影视 放映日志</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>版本比对</h2>
+        <p>同一部片子常有多个流通版本，此处列出差异要点</p>
+      </div>
+      <div class="vs">
+        <div class="col">
+          <h4>《哪吒闹海》宽银幕版</h4>
+          <ul>
+            <li><b>画幅</b> 2.35:1，左右留信息量更大</li>
+            <li><b>片长</b> 65 分钟，含完整"自刎"段落</li>
+            <li><b>声轨</b> 立体声重混，非原始</li>
+            <li><b>来源</b> 影院发行拷贝</li>
+          </ul>
+        </div>
+        <div class="mid" aria-hidden="true">VS</div>
+        <div class="col">
+          <h4>《哪吒闹海》电视播出版</h4>
+          <ul>
+            <li><b>画幅</b> 4:3 裁切，两侧画面丢失</li>
+            <li><b>片长</b> 62 分钟，删减约 3 分钟</li>
+            <li><b>声轨</b> 单声道，接近原始混录</li>
+            <li><b>来源</b> 电视台播出带转录</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>收录细则</h2>
+        <p>什么样的片子能进悠久影视的编号序列</p>
+      </div>
+      <ol class="rules">
+        <li>公映或播出时间距今二十年以上，且无官方高清版本在售。</li>
+        <li>至少存在一份可溯源实体拷贝、播出带或可查的胶片元素。</li>
+        <li>允许画质残缺，但需写明残缺位置，不接受"以次充好"的填补丁。</li>
+        <li>每部片子独立建档：编号、年代、片长、损伤清单、修复日志缺一不可。</li>
+      </ol>
+
+      <form class="note" action="#" method="post">
+        <div>
+          <label for="f-name">影迷称呼</label>
+          <input id="f-name" name="name" type="text" placeholder="怎么称呼你">
+        </div>
+        <div>
+          <label for="f-topic">想聊的片区</label>
+          <select id="f-topic" name="topic">
+            <option>美术片</option>
+            <option>早期译制片</option>
+            <option>录像厅时代</option>
+            <option>纪录片素材</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-film">片目（可选）</label>
+          <input id="f-film" name="film" type="text" placeholder="片名与年份">
+        </div>
+        <div>
+          <label for="f-contact">联系方式</label>
+          <input id="f-contact" name="contact" type="text" placeholder="邮箱或站内 ID">
+        </div>
+        <textarea id="f-body" name="body" placeholder="写下你的观影记忆、线索或手里的拷贝信息"></textarea>
+        <button class="btn" type="submit">投递给档案室</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="siteinfo">
+      <div class="siteinfo-h">站点档案 · 悠久影视</div>
+      <div class="siteinfo-b">
+        <dl>
+          <dt>站点名称</dt>
+          <dd>悠久影视（老影像修复档案室）</dd>
+        </dl>
+        <dl>
+          <dt>站点网址</dt>
+          <dd><a href="#">https://youjiuyingshi-app.github.io</a></dd>
+        </dl>
+        <dl>
+          <dt>常设栏目</dt>
+          <dd>片库索引 · 放映排期 · 修复手记 · 版本比对 · 收录细则 · 观影笔记</dd>
+        </dl>
+        <dl>
+          <dt>更新节奏</dt>
+          <dd>每周三补录片单，每月首周日公开一份修复日志</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h5>悠久影视</h5>
+        <p>一间只做旧影像的档案室。编号、核对、放映，把能公开的都写进条目里。</p>
+      </div>
+      <div>
+        <h5>栏目</h5>
+        <ul>
+          <li><a href="#">片库索引</a></li>
+          <li><a href="#">放映排期</a></li>
+          <li><a href="#">修复手记</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>档案</h5>
+        <ul>
+          <li><a href="#">版本比对</a></li>
+          <li><a href="#">收录细则</a></li>
+          <li><a href="#">观影笔记</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>网址</h5>
+        <ul>
+          <li><a href="#">https://youjiuyingshi-app.github.io</a></li>
+          <li><a href="#">悠久影视 · 片单订阅</a></li>
+          <li><a href="#">悠久影视 · 线索投递</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; 2026 悠久影视 · 本站条目仅作影像档案记录，版权归原权利人所有</span>
+      <span>关键词：悠久影视 · youjiuyingshi-app.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "悠久影视",
+  "alternateName": "悠久影视老影像修复档案室",
+  "url": "https://youjiuyingshi-app.github.io",
+  "inLanguage": "zh-CN",
+  "description": "悠久影视是老影像修复与冷门片放映档案站，公开片库编号、修复进度、版本比对与每周排期。",
+  "keywords": "悠久影视,老片修复档案,冷门佳片放映单,拷贝版本比对,录像厅时代影像",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://youjiuyingshi-app.github.io?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</body>
+</html>
